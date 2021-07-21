@@ -1,0 +1,1 @@
+web: gunicorn write_db:app

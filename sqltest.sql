@@ -1,0 +1,8 @@
+CREATE TABLE "TABLE1" (
+	"ID"	INTEGER UNIQUE,
+	"Title"	TEXT,
+	"style"	TEXT,
+	"Desc"	TEXT,
+	"updated"	TEXT,
+	PRIMARY KEY("ID" AUTOINCREMENT)
+);
