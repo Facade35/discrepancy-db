@@ -1,0 +1,51 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+{{ super() }}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Discrepancy Type List
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row pb-5">
+    <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+      <h1 class="pt-5 pb-2">List of Discrepancies</h1>
+
+      <p class="lead alert alert-warning">This is a list of all the discrepancies of the
+			<strong>{{ style }}</strong> type in the database.</p>
+
+	  <p class="ml-4"><a href="{{ url_for('index') }}">Return to the index.</a></p>
+
+		<table class="table">
+			<tr>
+				<th>ID</th>
+				<th>Title</th>
+				<th>Description</th>
+				<th>Updated</th>
+			</tr>
+
+			{% for sock in socks %}
+			<tr>
+				<td>{{ sock.ID}}</td>
+				<td>{{ sock.Title}}</td>
+				<td>{{ sock.Desc }}</td>
+				<td>{{ sock.updated }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}

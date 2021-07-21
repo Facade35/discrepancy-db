@@ -1,0 +1,39 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+{{ super() }}
+<style>
+	body { background: #e8f1f9; }
+</style>
+{% endblock %}
+
+{% block title %}
+Database
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+      <h1 class="pt-5 pb-2">Discrepancy Explorer</h1>
+
+      <p class="lead">This is the index page.</p>
+      <p>Select the discrepancy type you'd like to see:</p>
+
+      <ul>
+          {% for s in styles %}
+          <li><a href="{{ url_for( 'inventory', style=s.style ) }}">{{s.style}}</a></li>
+          {% endfor %}
+      </ul>
+
+	  <p>You can <a href="{{ url_for('add_record') }}">submit a new discrepancy</a>.</p>
+	  <p>You can <a href="{{ url_for( 'select_record', letters='AF' ) }}">select a discrepancy for editing</a>.</p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

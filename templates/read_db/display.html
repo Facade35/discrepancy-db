@@ -1,0 +1,45 @@
+  
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block styles %}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+{% block title %}
+Example page
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h1 class="text-center mt-5 display-2 text-primary">{{selType}}</h1>
+
+      <p class="lead text-center pt-4 pb-4">{{info[0:]}}</p>
+      <p class="lead text-center pt-4 pb-4">{{info[0]}}</p>
+      <p class="lead text-center pt-4 pb-4">{{info[1]}}</p>
+
+		</div>
+	</div>
+    </div>
+
+
+        <p><a href="{{ url_for('index') }}">Return to search page</a></p>
+
+
+    </div>
+
+	<div class="row">
+		<div class="col-md-8 col-lg-6 mx-md-auto mx-lg-auto">
+			<div class="bg-secondary text-white p-4">
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block styles %}
+	<style>
+		body { background: #f5f5f5; }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Selected Issue: {{ selType }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-lg-6 mx-md-auto mx-lg-auto">
+		<h1>{{zz}}</h1>
+
+
+	  <h1 class="mt-5 display-3 text-primary">{{ selType }}</h1>
+	  <div class="row">
+		<div class="col-md-8 col-lg-6 mx-md-auto mx-lg-auto">
+			<div class="bg-secondary text-white p-4">
+       {{ wtf.quick_form(form,action=url_for("err_display"), method="post") }}
+
+    </div>
+
+
+      <p><a href="{{ url_for('index') }}">Return to search page</a></p>
+
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

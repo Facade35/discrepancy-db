@@ -1,0 +1,48 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+	<style>
+		body { background: #e8f1f9; }
+	</style>
+{% endblock %}
+
+
+{% block title %}
+Error List
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row pb-5">
+    <div class="col-md-10 col-lg-8 mx-lg-auto mx-md-auto">
+
+      <h1 class="pt-5 pb-2">List of Issues</h1>
+
+      <p class="lead alert alert-warning">This is a list of all the issues of the
+			<strong>{{ style }}</strong> Type in database.</p>
+
+	  <p class="ml-4"><a href="{{ url_for('index') }}">Return to the index.</a></p>
+
+		<table class="table">
+			<tr>
+				<th>ID</th>
+				<th>Description</th>
+				<th>Type</th>
+			</tr>
+
+			{% for issue in issues %}
+			<tr>
+				<td>{{ issue.ID }}</td>
+				<td>{{ issue.style }}</td>
+				<td>{{ issue.Desc }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}
